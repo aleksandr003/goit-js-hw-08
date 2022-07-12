@@ -1,13 +1,10 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 // Описан в документации
 import SimpleLightbox from 'simplelightbox';
 // Дополнительный импорт стилей
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryBlockEl = document.querySelector('.gallery');
-
-// Функція для створення карточки makeGalleryCard(cardInfo)
 
 const makeGalleryCard = ({ preview, original, description } = {}) => {
   return `
@@ -21,12 +18,10 @@ const makeGalleryCard = ({ preview, original, description } = {}) => {
   `;
 };
 
-// Створення масиву рядків із елементами
 const galleryCardsArr = galleryItems.map(el => {
   return makeGalleryCard(el);
 });
 
-// Вставка елементів на сторінку
 galleryBlockEl.insertAdjacentHTML('afterbegin', galleryCardsArr.join(''));
 
 var lightbox = new SimpleLightbox('.gallery a', {
